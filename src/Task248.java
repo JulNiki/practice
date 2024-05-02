@@ -9,8 +9,8 @@ public class Task248 {
         Scanner scan = new Scanner(System.in);
         int x = scan.nextInt();
         int y = scan.nextInt();
-        int x1 = (x < y)?x:y;
-        int x2 = (x > y)?x:y;
+        int x1 = Math.min(x, y);
+        int x2 = Math.max(x, y);
         int sum = 0;
         int sumMax = 0;
         int number = 0;

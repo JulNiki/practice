@@ -1,31 +1,26 @@
-/* Пользователь вводит два целых числа (границы отрезка числовой оси).
-Границы могут быть введены некорректно (первое число больше второго).
-В этом случае нужно границы переставить местами. Т.е. перебор должен быть всегда от меньшего к большему.
- */
-import java.util.Scanner;
+//Пользователь вводит границы диапазона положительных целых чисел. Границы диапазона в тестах корректны (не нужно проверять, что первая граница меньше или равна второй).
+//Нужно найти сумму наименьших делителей всех чисел в этом диапазоне (рассматриваются делители, начиная с 2).
 
+import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        int x = scan.nextInt();
-        int y = scan.nextInt();
-        int x1 = (x < y)?x:y;
-        int x2 = (x > y)?x:y;
+        int x1 = scan.nextInt();
+        int x2 = scan.nextInt();
         int sum = 0;
-        int sumMax = 0;
-        int number = 0;
+        scan.close();
 
-        for (int i = x1; i <= x2; i++) {
-            for(int n = i; n != 0; n /= 10)
-            {
-                sum += Math.abs(n % 10);
+
+
+        ONE: for (int i = x1; i <= x2; i++) {
+            for (int k = 2; k <= i; k++) {
+                if (i % k == 0) {
+                    sum += k;
+                    continue ONE;
+                }
+
             }
-            if (sum > sumMax) {
-                sumMax = sum;
-                number = i;
-            }
-            sum = 0;
         }
-        System.out.println(number);
+        System.out.println(sum);
     }
 }
