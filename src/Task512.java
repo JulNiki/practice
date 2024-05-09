@@ -2,7 +2,7 @@
 Если да, то он возвращает часть строки без этого фрагмента. Если нет, то он возвращает строку без изменения. */
 import java.util.Scanner;
 
-class Main {
+class Task512 {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         String str = scan.nextLine();
