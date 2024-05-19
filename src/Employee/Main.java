@@ -50,10 +50,16 @@ public class Main {
         list[indMaxSalary].show();
         System.out.println();
 
+        boolean requiredEmployees = false;
         for (Employee pers : list) {
             if (pers instanceof Programmer && ((Programmer) pers).getSpecialization().equals("frontend")) {
                 pers.show();
+                requiredEmployees = true;
             }
+        }
+
+        if (!requiredEmployees) {
+            System.out.println("NO");
         }
     }
 }

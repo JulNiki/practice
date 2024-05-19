@@ -3,7 +3,6 @@ package Employee;
 public class Accountant extends Employee{
     private char gruppa;
 
-
     public Accountant(String surname, String sex, int age, int salary, char gruppa) {
         super(surname, sex, age, salary);
         this.gruppa = gruppa;
