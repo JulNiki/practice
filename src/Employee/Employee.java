@@ -26,7 +26,7 @@ public class Employee {
     }
 
     public void show(){
-        System.out.printf( "%s;%s;%d;%d", surname, sex, age, salary);
+        System.out.printf( "%s;%s;%d;%d\n", surname, sex, age, salary);
     }
 
     public Employee() {
